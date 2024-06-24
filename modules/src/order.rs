@@ -1,8 +1,8 @@
  // Use the `Customer` struct from the `customer` module and the `Product` struct from the `product` module
- use crate::{customer::Customer, product::Product};
+ use crate::{customer::{self, Customer}, product::{self, Product}};
 
  // Define a struct `Order`
- struct Order {
+ pub struct Order {
      pub id: u64,
      pub product: Product,
      pub customer: Customer,
@@ -11,6 +11,11 @@
 
  // Implement methods for the `Order` struct
  impl Order {
+    // Create new Order
+    pub fn new(id:u64, product:Product, customer:Customer, quantity:u32) -> Order {
+        Order {id, product, customer, quantity}
+    }
+
      // Private method to calculate discount
      fn calculate_discount(&self) -> f64 {
          if self.quantity > 5 {
