@@ -75,3 +75,25 @@ fn main() {
     r1.area();
 }
 ```
+
+
+### TRAITS BOUNDS
+Trait bounds in Rust specify that a generic type parameter must implement a particular trait. They allow you to enforce constraints on generic types, ensuring that they provide certain behavior or methods.
+
+## How It Works
+When you use a generic type in a function, struct, or trait, you can use trait bounds to specify that the generic type must implement one or more traits. This ensures that the methods defined by those traits are available for that type.
+
+## Syntax
+Trait bounds are specified using the `:` symbol. Here’s the basic syntax:
+
+```rust
+fn function_name<T: TraitName>(param: T) {
+    // function body
+}
+```
+You can also specify multiple trait bounds:
+```rust
+fn function_name<T: Trait1 + Trait2>(param: T) {
+    // function body
+}
+```

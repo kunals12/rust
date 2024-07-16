@@ -59,6 +59,13 @@ impl Shape for Rectangle {
     }
 }
 
+/*Trait bounds in Rust specify that a generic type parameter must implement a particular trait.
+They allow you to enforce constraints on generic types, ensuring that they provide certain behavior or methods.*/
+// Define a function that prints the area of a shape, using trait bounds
+fn print_area<T: Shape>(shape: &T) {
+    println!("Area: {}", shape.area());
+}
+
 fn main() {
     // Create a new 'Square' instance
     let s1 = Square::new(5.3, 1, String::from("Red"));
@@ -71,4 +78,6 @@ fn main() {
 
     // Calculate and print the area of the rectangle
     r1.area();
+    print_area(&s1);
+    print_area(&r1);
 }
