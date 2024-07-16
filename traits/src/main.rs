@@ -13,8 +13,14 @@ struct Rectangle {
     color: String,
 }
 
+// Define a trait 'Draw'.
+trait Draw {
+    fn draw_object(&self);
+}
+
+// Define a supertrait 'Shape' that extends 'Draw'. i.e. trait Shape: Draw
 // Define a trait 'Shape' with a method 'area' that returns a float
-trait Shape {
+trait Shape: Draw {
     fn area(&self) -> f32;
 }
 
@@ -50,12 +56,26 @@ impl Shape for Square {
     }
 }
 
+// Implement the 'Draw' trait for 'Square'
+impl Draw for Square {
+    fn draw_object(&self) {
+        println!("Drawing a square");
+    }
+}
+
 // Implement the 'Shape' trait for 'Rectangle'
 impl Shape for Rectangle {
     fn area(&self) -> f32 {
         let area_of_rectangle = self.length * self.width;
         println!("Rectangle area {}", area_of_rectangle);
         area_of_rectangle
+    }
+}
+
+// Implement the 'Draw' trait for 'Rectangle'
+impl Draw for Rectangle {
+    fn draw_object(&self) {
+        println!("Drawing a rectangle");
     }
 }
 
@@ -75,9 +95,11 @@ fn main() {
 
     // Calculate and print the area of the square
     s1.area();
+    s1.draw_object();
 
     // Calculate and print the area of the rectangle
     r1.area();
+    r1.draw_object();
     print_area(&s1);
     print_area(&r1);
 }

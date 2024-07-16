@@ -1,4 +1,4 @@
-### Introduction to Traits
+## Introduction to Traits
 
 Traits in Rust are a way to define shared behavior across multiple types. They allow you to write generic and reusable code. A trait defines a set of methods that a type must implement.
 
@@ -26,7 +26,7 @@ struct Rectangle {
 }
 ```
 
-## Define Trait
+### Define Trait
 ```rust
 // Define a trait 'Shape' with a method 'area' that returns a float
 trait Shape {
@@ -75,15 +75,16 @@ fn main() {
     r1.area();
 }
 ```
+#
 
 
-### TRAITS BOUNDS
+# <u>TRAITS BOUNDS</u>
 Trait bounds in Rust specify that a generic type parameter must implement a particular trait. They allow you to enforce constraints on generic types, ensuring that they provide certain behavior or methods.
 
-## How It Works
+### How It Works
 When you use a generic type in a function, struct, or trait, you can use trait bounds to specify that the generic type must implement one or more traits. This ensures that the methods defined by those traits are available for that type.
 
-## Syntax
+### Syntax
 Trait bounds are specified using the `:` symbol. Here’s the basic syntax:
 
 ```rust
@@ -97,3 +98,28 @@ fn function_name<T: Trait1 + Trait2>(param: T) {
     // function body
 }
 ```
+#
+
+# <u>Super Traits in Rust</u>
+### Definition
+`A supertrait in Rust is a trait that requires another trait to be implemented as a prerequisite`. This means that to implement a given trait (the supertrait), you must first implement another trait. Supertraits are useful for defining a hierarchy of traits where some traits build on top of others, adding more specific behavior.
+
+
+### How It Works
+When you define a trait as a supertrait, any type that implements the supertrait must also implement the required base trait(s). This ensures that the methods from the base trait(s) are available when implementing the supertrait.
+
+### Syntax
+The syntax for defining a supertrait involves using the : symbol followed by the base trait(s) in the trait definition:
+
+```rust
+trait BaseTrait {
+    fn base_method(&self);
+}
+
+trait SuperTrait: BaseTrait {
+    fn super_method(&self);
+}
+```
+In this example, SuperTrait is a supertrait of BaseTrait. Any type that implements SuperTrait must also implement BaseTrait.
+
+#
