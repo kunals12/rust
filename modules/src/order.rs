@@ -1,12 +1,12 @@
  // Use the `Customer` struct from the `customer` module and the `Product` struct from the `product` module
- use crate::{customer::{self, Customer}, product::{self, Product}};
+ use crate::{customer::Customer, product::Product};
 
  // Define a struct `Order`
  pub struct Order {
-     pub id: u64,
-     pub product: Product,
-     pub customer: Customer,
-     pub quantity: u32,
+     id: u64,
+     product: Product,
+     customer: Customer,
+     quantity: u32,
  }
 
  // Implement methods for the `Order` struct
