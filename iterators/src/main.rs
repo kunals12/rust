@@ -1,4 +1,5 @@
 mod basic_iterators;
+mod into_iterator;
 mod iterator_adaptors;
 fn main() {
     println!("Basic Iterator Example:");
@@ -6,4 +7,7 @@ fn main() {
 
     println!("Iterator Adaptors Example");
     iterator_adaptors::run();
+
+    println!("Into Iterator Example");
+    into_iterator::run();
 }
