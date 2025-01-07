@@ -1,0 +1,19 @@
+[workspace]
+members = [
+    "closures",
+    "enums",
+    "generics",
+    "hashmaps",
+    "iterators",
+    "largetNumber",
+    "modules",
+    "options",
+    "ownership",
+    "phoneBook",
+    "result",
+    "serde_json",
+    "structs",
+    "testing",
+    "threads",
+    "traits"
+]
