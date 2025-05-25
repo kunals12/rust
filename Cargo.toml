@@ -17,4 +17,5 @@ members = [
     "threads",
     "traits",
     "two_sum",
+    "palindrome",
 ]
