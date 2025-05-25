@@ -38,7 +38,6 @@ fn display_item_info(item: &Item) {
     println!("Publication Type: {:?}", item.type_);
 }
 
-
 fn main() {
     let book = Item {
         id: 1,
@@ -46,5 +45,5 @@ fn main() {
         year: 1925,
         type_: ItemType::Book,
     };
-      display_item_info(&book);
+    display_item_info(&book);
 }
