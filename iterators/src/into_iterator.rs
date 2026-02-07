@@ -15,4 +15,6 @@ pub fn run() {
     for number in num_iter.into_iter() {
         println!("IntoIterator gave: {}", number);
     }
+
+
 }

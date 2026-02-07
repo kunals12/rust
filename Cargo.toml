@@ -17,5 +17,5 @@ members = [
     "threads",
     "traits",
     "two_sum",
-    "palindrome",
+    "palindrome", "practice", "linear_search", "binary_search",
 ]
